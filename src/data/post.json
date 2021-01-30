@@ -1,0 +1,8 @@
+[
+  {
+    "title": "How to deploy a React application to Github page?",
+    "content": "<h2>In this article, I would like to show you how to deploy a React application to your Github page.</h2>\n\n<h2>1. Create a repository for your page.</h2>\n\n<p>Head over to GitHub and create a new public repository named username.github.io, where username is your username (or organization name) on GitHub.<br />\n<img alt=\"\" src=\"https://i.imgur.com/EkehH3e.png\" style=\"height:474px; width:659px\" /></p>\n",
+    "createdAt": "2021-01-31",
+    "createdBy": "Loc Vo"
+  }
+]

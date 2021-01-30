@@ -15,6 +15,7 @@ const useStyles = makeStyles({
     backgroundColor: AppColor.background,
     color: '#000',
     boxShadow: 'none',
+    marginBottom: 45,
   },
 });
 
