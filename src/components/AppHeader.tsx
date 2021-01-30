@@ -1,10 +1,10 @@
 import {
-  AppBar, IconButton, makeStyles, Toolbar, Typography,
+  AppBar, IconButton, makeStyles, Toolbar,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
 import Logo from '@material-ui/icons/Style';
-import { BACKGROUND } from '../common/AppColors';
+import AppColor from '../common/AppColors';
 
 const useStyles = makeStyles({
   toolbar: {
@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     justifyContent: 'space-between',
   },
   appbar: {
-    backgroundColor: BACKGROUND,
+    backgroundColor: AppColor.background,
     color: '#000',
     boxShadow: 'none',
   },
