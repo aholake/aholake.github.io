@@ -8,6 +8,7 @@ import AppHeader from './components/AppHeader';
 import AppColor from './common/AppColors';
 import AppContent from './components/AppContent';
 import Post from './components/Post/Post';
+import DisplayMode from './components/Post/DisplayMode';
 
 const theme = createMuiTheme({
   typography: {
@@ -44,6 +45,8 @@ function App() {
                 content={post.content}
                 createdAt={new Date(post.createdAt)}
                 createdBy={post.createdBy}
+                description={post.description}
+                displayMode={DisplayMode.SUMMARY}
               />
             ))}
           </AppContent>

@@ -5,6 +5,7 @@ import {
 import moment from 'moment';
 // @ts-ignore
 import ReactHtmlParser from 'react-html-parser';
+import DisplayMode from './DisplayMode';
 
 const useStyles = makeStyles({
   '@global': {
@@ -23,12 +24,14 @@ const useStyles = makeStyles({
 interface PropsType {
   title: string;
   content: string;
+  description: string;
   createdAt: Date;
   createdBy: string;
+  displayMode: DisplayMode;
 }
 const Post = (props: PropsType) => {
   const {
-    title, content, createdAt, createdBy,
+    title, description, createdAt, createdBy, content, displayMode,
   } = props;
   const classes = useStyles();
   return (
@@ -37,7 +40,10 @@ const Post = (props: PropsType) => {
       <Typography variant="caption">{`${moment(createdAt).fromNow()} by ${createdBy}`}</Typography>
 
       <Box className={classes.content}>
-        {ReactHtmlParser(content)}
+        {displayMode === DisplayMode.SUMMARY && (
+          <Typography>{description}</Typography>
+        )}
+        {displayMode === DisplayMode.DETAIL && ReactHtmlParser(content)}
       </Box>
     </Paper>
   );
