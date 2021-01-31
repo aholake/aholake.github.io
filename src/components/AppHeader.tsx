@@ -1,5 +1,5 @@
 import {
-  AppBar, IconButton, makeStyles, Toolbar,
+  AppBar, IconButton, makeStyles, Theme, Toolbar,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import HomeIcon from '@material-ui/icons/Home';
 import AppColor from '../common/AppColors';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme: Theme) => ({
   toolbar: {
     display: 'flex',
     justifyContent: 'space-between',
@@ -16,13 +16,15 @@ const useStyles = makeStyles({
     backgroundColor: AppColor.background,
     color: '#000',
     boxShadow: 'none',
-    marginBottom: 45,
+    [theme.breakpoints.up('md')]: {
+      marginBottom: 45,
+    },
   },
   logo: {
     color: 'initial',
     textDecorate: 'none',
   },
-});
+}));
 
 const AppHeader = () => {
   const classes = useStyles();

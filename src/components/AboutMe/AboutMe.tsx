@@ -8,6 +8,8 @@ import {
 import _flatten from 'lodash/flatten';
 import _uniq from 'lodash/uniq';
 import { useHistory } from 'react-router-dom';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import posts from '../../data/post.json';
 
 const useStyles = makeStyles({
@@ -46,9 +48,14 @@ const AboutMe = () => {
           </div>
           <div className={classes.entry}>
             <Typography variant="h4">Follow me</Typography>
-            <Typography variant="body1">
-              Some links to my connections.
-            </Typography>
+            <span>
+              <a href="https://fb.com/aholake">
+                <FacebookIcon />
+              </a>
+              <a href="https://linkedin.com/aholake">
+                <LinkedInIcon />
+              </a>
+            </span>
           </div>
           <div className={classes.entry}>
             <Typography variant="h4">Instagram</Typography>
@@ -58,16 +65,14 @@ const AboutMe = () => {
           </div>
           <div className={classes.entry}>
             <Typography variant="h4">Tags</Typography>
-            <Typography variant="body1">
-              {tags.map((tagName) => (
-                <Chip
-                  key={tagName}
-                  className={classes.chip}
-                  label={tagName}
-                  onClick={() => history.push(`/tag/${tagName}`)}
-                />
-              ))}
-            </Typography>
+            {tags.map((tagName) => (
+              <Chip
+                key={tagName}
+                className={classes.chip}
+                label={tagName}
+                onClick={() => history.push(`/tag/${tagName}`)}
+              />
+            ))}
           </div>
         </Grid>
       </Grid>

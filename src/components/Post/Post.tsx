@@ -10,11 +10,6 @@ import clsx from 'clsx';
 import DisplayMode from './DisplayMode';
 
 const useStyles = makeStyles({
-  '@global': {
-    p: {
-      fontFamily: 'Segoe UI',
-    },
-  },
   root: {
     padding: 10,
     marginBottom: 10,
@@ -24,6 +19,17 @@ const useStyles = makeStyles({
   },
   content: {
     marginTop: 5,
+    '@global': {
+      p: {
+        fontFamily: 'Segoe UI',
+      },
+      img: {
+        maxWidth: '100%',
+      },
+      code: {
+        whiteSpace: 'pre-wrap',
+      },
+    },
   },
   footer: {
     marginTop: 5,
@@ -84,6 +90,7 @@ const Post = (props: PropsType) => {
       <Box className={classes.footer}>
         {tags.map((tag) => (
           <Chip
+            key={tag}
             label={tag}
             onClick={() => history.push(`/tag/${tag}`)}
             classes={{
