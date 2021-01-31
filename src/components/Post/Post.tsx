@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Box, makeStyles, Paper, Typography,
+  Box, Chip, makeStyles, Paper, Typography,
 } from '@material-ui/core';
 import moment from 'moment';
 // @ts-ignore
@@ -20,6 +20,13 @@ const useStyles = makeStyles({
   content: {
     marginTop: 5,
   },
+  footer: {
+    marginTop: 5,
+  },
+  chip: {
+    cursor: 'pointer',
+    margin: '0 2px',
+  },
 });
 
 interface PropsType {
@@ -29,10 +36,11 @@ interface PropsType {
   createdAt: Date;
   createdBy: string;
   displayMode: DisplayMode;
+  tags: string[]
 }
 const Post = (props: PropsType) => {
   const {
-    title, description, createdAt, createdBy, content, displayMode,
+    title, description, createdAt, createdBy, content, displayMode, tags,
   } = props;
   const classes = useStyles();
   return (
@@ -45,6 +53,17 @@ const Post = (props: PropsType) => {
           <Typography>{description}</Typography>
         )}
         {displayMode === DisplayMode.DETAIL && ReactHtmlParser(content)}
+      </Box>
+
+      <Box className={classes.footer}>
+        {tags.map((tag) => (
+          <Chip
+            label={tag}
+            classes={{
+              root: classes.chip,
+            }}
+          />
+        ))}
       </Box>
     </Paper>
   );

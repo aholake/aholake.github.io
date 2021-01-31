@@ -1,8 +1,8 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
-import postData from '../data/post.json';
-import Post from './Post/Post';
-import DisplayMode from './Post/DisplayMode';
+import postData from '../../data/post.json';
+import Post from './Post';
+import DisplayMode from './DisplayMode';
 
 const PostWrapper = () => (
   <Box style={{
@@ -18,6 +18,7 @@ const PostWrapper = () => (
         createdBy={post.createdBy}
         description={post.description}
         displayMode={DisplayMode.SUMMARY}
+        tags={post.tags}
       />
     ))}
   </Box>
