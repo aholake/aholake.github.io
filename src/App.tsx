@@ -2,13 +2,10 @@ import React from 'react';
 import {
   createMuiTheme, Grid, makeStyles, ThemeProvider,
 } from '@material-ui/core';
-
-import postData from './data/post.json';
 import AppHeader from './components/AppHeader';
 import AppColor from './common/AppColors';
 import AppContent from './components/AppContent';
-import Post from './components/Post/Post';
-import DisplayMode from './components/Post/DisplayMode';
+import PostWrapper from './components/PostWrapper';
 
 const theme = createMuiTheme({
   typography: {
@@ -39,16 +36,7 @@ function App() {
         <Grid item xs={8} container direction="column">
           <AppHeader />
           <AppContent>
-            {postData.map((post) => (
-              <Post
-                title={post.title}
-                content={post.content}
-                createdAt={new Date(post.createdAt)}
-                createdBy={post.createdBy}
-                description={post.description}
-                displayMode={DisplayMode.SUMMARY}
-              />
-            ))}
+            <PostWrapper />
           </AppContent>
         </Grid>
       </Grid>

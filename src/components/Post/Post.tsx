@@ -15,6 +15,7 @@ const useStyles = makeStyles({
   },
   root: {
     padding: 10,
+    marginBottom: 10,
   },
   content: {
     marginTop: 5,
