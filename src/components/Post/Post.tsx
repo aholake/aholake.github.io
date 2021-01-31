@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Box, Chip, makeStyles, Paper, Typography,
+  Box, Chip, Paper, Typography,
 } from '@material-ui/core';
 import moment from 'moment';
 // @ts-ignore
@@ -8,37 +8,7 @@ import ReactHtmlParser from 'react-html-parser';
 import { useHistory } from 'react-router-dom';
 import clsx from 'clsx';
 import DisplayMode from './DisplayMode';
-
-const useStyles = makeStyles({
-  root: {
-    padding: 10,
-    marginBottom: 10,
-  },
-  clickableTitle: {
-    cursor: 'pointer',
-  },
-  content: {
-    marginTop: 5,
-    '@global': {
-      p: {
-        fontFamily: 'Segoe UI',
-      },
-      img: {
-        maxWidth: '100%',
-      },
-      code: {
-        whiteSpace: 'pre-wrap',
-      },
-    },
-  },
-  footer: {
-    marginTop: 5,
-  },
-  chip: {
-    cursor: 'pointer',
-    margin: '0 2px',
-  },
-});
+import useStyles from './Post.styles';
 
 interface PropsType {
   id: number;
