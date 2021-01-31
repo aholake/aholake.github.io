@@ -1,17 +1,21 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
-import postData from '../../data/post.json';
-import Post from './Post';
-import DisplayMode from './DisplayMode';
+import Post from '../Post/Post';
+import DisplayMode from '../Post/DisplayMode';
 
-const PostWrapper = () => (
+interface PropsType {
+  posts: Record<string, any>[]
+}
+
+const PostList = ({ posts }: PropsType) => (
   <Box style={{
     height: 'calc(100vh - 110px)',
     overflow: 'auto',
   }}
   >
-    {postData.map((post) => (
+    {posts.map((post) => (
       <Post
+        id={post.id}
         title={post.title}
         content={post.content}
         createdAt={new Date(post.createdAt)}
@@ -24,4 +28,4 @@ const PostWrapper = () => (
   </Box>
 );
 
-export default PostWrapper;
+export default PostList;

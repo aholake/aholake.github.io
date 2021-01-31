@@ -1,9 +1,14 @@
 import React from 'react';
 import {
+  Chip,
   Grid,
   makeStyles, Paper,
   Typography,
 } from '@material-ui/core';
+import _flatten from 'lodash/flatten';
+import _uniq from 'lodash/uniq';
+import { useHistory } from 'react-router-dom';
+import posts from '../../data/post.json';
 
 const useStyles = makeStyles({
   avatar: {
@@ -13,10 +18,15 @@ const useStyles = makeStyles({
   entry: {
     marginTop: 20,
   },
+  chip: {
+    margin: '2px',
+  },
 });
 
 const AboutMe = () => {
   const classes = useStyles();
+  const tags: string[] = _uniq(_flatten(posts.map((p) => p.tags)));
+  const history = useHistory();
   return (
     <Paper>
       <Grid container style={{ padding: 10 }}>
@@ -49,7 +59,14 @@ const AboutMe = () => {
           <div className={classes.entry}>
             <Typography variant="h4">Tags</Typography>
             <Typography variant="body1">
-              Some links to my connections.
+              {tags.map((tagName) => (
+                <Chip
+                  key={tagName}
+                  className={classes.chip}
+                  label={tagName}
+                  onClick={() => history.push(`/tag/${tagName}`)}
+                />
+              ))}
             </Typography>
           </div>
         </Grid>

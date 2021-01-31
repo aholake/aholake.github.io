@@ -5,6 +5,8 @@ import {
 import moment from 'moment';
 // @ts-ignore
 import ReactHtmlParser from 'react-html-parser';
+import { useHistory } from 'react-router-dom';
+import clsx from 'clsx';
 import DisplayMode from './DisplayMode';
 
 const useStyles = makeStyles({
@@ -16,6 +18,9 @@ const useStyles = makeStyles({
   root: {
     padding: 10,
     marginBottom: 10,
+  },
+  clickableTitle: {
+    cursor: 'pointer',
   },
   content: {
     marginTop: 5,
@@ -30,6 +35,7 @@ const useStyles = makeStyles({
 });
 
 interface PropsType {
+  id: number;
   title: string;
   content: string;
   description: string;
@@ -40,12 +46,32 @@ interface PropsType {
 }
 const Post = (props: PropsType) => {
   const {
-    title, description, createdAt, createdBy, content, displayMode, tags,
+    id,
+    title,
+    description,
+    createdAt,
+    createdBy,
+    content,
+    displayMode,
+    tags,
   } = props;
   const classes = useStyles();
+  const history = useHistory();
+  const onClick = () => {
+    if (displayMode === DisplayMode.DETAIL) {
+      return;
+    }
+    history.push(`/post/${id}`);
+  };
   return (
     <Paper className={classes.root}>
-      <Typography variant="h4">{title}</Typography>
+      <Typography
+        variant="h4"
+        onClick={onClick}
+        className={clsx(displayMode === DisplayMode.SUMMARY && classes.clickableTitle)}
+      >
+        {title}
+      </Typography>
       <Typography variant="caption">{`${moment(createdAt).fromNow()} by ${createdBy}`}</Typography>
 
       <Box className={classes.content}>
@@ -59,6 +85,7 @@ const Post = (props: PropsType) => {
         {tags.map((tag) => (
           <Chip
             label={tag}
+            onClick={() => history.push(`/tag/${tag}`)}
             classes={{
               root: classes.chip,
             }}

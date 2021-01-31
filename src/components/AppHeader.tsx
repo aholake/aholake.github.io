@@ -3,7 +3,8 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import React from 'react';
-import Logo from '@material-ui/icons/Style';
+import { Link } from 'react-router-dom';
+import HomeIcon from '@material-ui/icons/Home';
 import AppColor from '../common/AppColors';
 
 const useStyles = makeStyles({
@@ -17,6 +18,10 @@ const useStyles = makeStyles({
     boxShadow: 'none',
     marginBottom: 45,
   },
+  logo: {
+    color: 'initial',
+    textDecorate: 'none',
+  },
 });
 
 const AppHeader = () => {
@@ -24,10 +29,9 @@ const AppHeader = () => {
   return (
     <AppBar position="static" classes={{ root: classes.appbar }}>
       <Toolbar className={classes.toolbar}>
-        <span>
-          <Logo />
-          AHOLAKE
-        </span>
+        <Link to="/" className={classes.logo}>
+          <HomeIcon />
+        </Link>
         <IconButton edge="start" color="inherit" aria-label="menu">
           <MenuIcon />
         </IconButton>
