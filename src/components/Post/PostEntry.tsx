@@ -23,7 +23,7 @@ const PostEntry = ({
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Typography variant="h4" className={classes.clickableTitle} onClick={onClick}>
+      <Typography variant="h5" className={classes.clickableTitle} onClick={onClick}>
         {title}
       </Typography>
       <Typography variant="caption">{`${moment(createdAt).fromNow()} by ${createdBy}`}</Typography>

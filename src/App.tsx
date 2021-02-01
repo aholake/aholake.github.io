@@ -30,7 +30,6 @@ const theme = createMuiTheme({
 
 const useStyles = makeStyles({
   root: {
-    height: '100vh',
     background: AppColor.background,
   },
 });

@@ -6,7 +6,7 @@ interface PropsType {
   children: ReactNode;
 }
 const AppContent = ({ children }: PropsType) => (
-  <Grid container spacing={2}>
+  <Grid container spacing={2} style={{ marginTop: 60 }}>
     <Hidden mdDown>
       <Grid item md={4} xs={12}>
         <AboutMe />

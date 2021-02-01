@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme: Theme) => ({
 const AppHeader = () => {
   const classes = useStyles();
   return (
-    <AppBar position="static" classes={{ root: classes.appbar }}>
+    <AppBar position="fixed" classes={{ root: classes.appbar }}>
       <Toolbar className={classes.toolbar}>
         <Link to="/" className={classes.logo}>
           <HomeIcon />

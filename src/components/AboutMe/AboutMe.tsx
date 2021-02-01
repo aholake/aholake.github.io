@@ -37,7 +37,7 @@ const AboutMe = () => {
         </Grid>
         <Grid item xs={12}>
           <div className={classes.entry}>
-            <Typography variant="h4">About me</Typography>
+            <Typography variant="h5">About me</Typography>
             <Typography variant="body1">
               Hi!! My name is Loc Vo - 27 years old.
               Currently, I am working as a software engineer.
@@ -47,7 +47,7 @@ const AboutMe = () => {
             </Typography>
           </div>
           <div className={classes.entry}>
-            <Typography variant="h4">Follow me</Typography>
+            <Typography variant="h5">Follow me</Typography>
             <span>
               <a href="https://fb.com/aholake">
                 <FacebookIcon />
@@ -58,13 +58,13 @@ const AboutMe = () => {
             </span>
           </div>
           <div className={classes.entry}>
-            <Typography variant="h4">Instagram</Typography>
+            <Typography variant="h5">Instagram</Typography>
             <Typography variant="body1">
               Some links to my connections.
             </Typography>
           </div>
           <div className={classes.entry}>
-            <Typography variant="h4">Tags</Typography>
+            <Typography variant="h5">Tags</Typography>
             {tags.map((tagName) => (
               <Chip
                 key={tagName}

@@ -20,7 +20,7 @@ const PostDetail = ({ post }: PropsType) => {
   const classes = useStyles();
   return (
     <Paper className={classes.root}>
-      <Typography variant="h4">
+      <Typography variant="h5">
         {title}
       </Typography>
       <Typography variant="caption">{`${moment(createdAt).fromNow()} by ${createdBy}`}</Typography>
