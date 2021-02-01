@@ -1,10 +1,10 @@
 import React from 'react';
 import { Box, makeStyles, Theme } from '@material-ui/core';
-import Post from '../Post/Post';
-import DisplayMode from '../Post/DisplayMode';
+import PostEntry from '../Post/PostEntry';
+import { PostModel } from '../Post/model/PostModel';
 
 interface PropsType {
-  posts: Record<string, any>[]
+  posts: PostModel[];
 }
 const useStyles = makeStyles((theme: Theme) => ({
   root: {
@@ -19,18 +19,8 @@ const PostList = ({ posts }: PropsType) => {
   const classes = useStyles();
   return (
     <Box className={classes.root}>
-      {posts.map((post) => (
-        <Post
-          key={post.id}
-          id={post.id}
-          title={post.title}
-          content={post.content}
-          createdAt={new Date(post.createdAt)}
-          createdBy={post.createdBy}
-          description={post.description}
-          displayMode={DisplayMode.SUMMARY}
-          tags={post.tags}
-        />
+      {posts.map((post: PostModel) => (
+        <PostEntry post={post} />
       ))}
     </Box>
   );
