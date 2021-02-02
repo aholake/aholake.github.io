@@ -11,7 +11,7 @@
   {
     "id": 2,
     "title": "Some apps help to plan and enjoy your trip",
-    "description": "Github gives us a free domain and repository to create own page, instead of creating a boring static page, can we make it as a dynamic single web app?. In this article, I would like to show you how to make and deploy a simple React project to Github page",
+    "description": "Some mobile applications that I think it could be your perfect assistant during the trip",
     "content": "",
     "createdAt": "2020-12-05",
     "createdBy": "Loc Vo",
@@ -20,8 +20,8 @@
   {
     "id": 3,
     "title": "Create a microservice with Quarkus",
-    "description": "Github gives us a free domain and repository to create own page, instead of creating a boring static page, can we make it as a dynamic single web app?. In this article, I would like to show you how to make and deploy a simple React project to Github page",
-    "content": "<p><em>In this article, I would like to show you how to deploy a React application to your Github page.</em></p>\n\n<p><em>1. Create a repository for your page.</em></p>\n\n<p>Head over to GitHub and create a new public repository named username.github.io, where username is your username (or organization name) on GitHub.<br />\n<img alt=\"\" src=\"https://i.imgur.com/EkehH3e.png\" style=\"height:474px; width:659px\" /></p>\n",
+    "description": "",
+    "content": "",
     "createdAt": "2020-11-02",
     "createdBy": "Loc Vo",
     "tags": ["Programming", "Architecture"]
@@ -29,8 +29,8 @@
   {
     "id": 4,
     "title": "Javalin - What is it?",
-    "description": "Github gives us a free domain and repository to create own page, instead of creating a boring static page, can we make it as a dynamic single web app?. In this article, I would like to show you how to make and deploy a simple React project to Github page",
-    "content": "<p><em>In this article, I would like to show you how to deploy a React application to your Github page.</em></p>\n\n<p><em>1. Create a repository for your page.</em></p>\n\n<p>Head over to GitHub and create a new public repository named username.github.io, where username is your username (or organization name) on GitHub.<br />\n<img alt=\"\" src=\"https://i.imgur.com/EkehH3e.png\" style=\"height:474px; width:659px\" /></p>\n",
+    "description": "",
+    "content": "",
     "createdAt": "2021-01-31",
     "createdBy": "Loc Vo",
     "tags": ["Programming", "Java"]
