@@ -40,7 +40,7 @@
     "title": "[JPA] Persist bidirectional entity to database using Entity Manager",
     "description": "",
     "content": "#### Persist a bidirectional entity using JPA\nFor example, we have 2 entities like this\n````java\n@Entity\nclass Product {\n  @Id\n  private Long id;\n\n  private String name; \n\n  @ManyToOne\n  private Category category;\n}\n````\n````java\n@Entity\nclass Category {\n  @Id\n  private Long id;\n\n  private String name;\n\n  @OneToMany(mappedBy=\"category\")\n  private List<Product> products;\n}\n````\nHow we can persist cascade the object like this to DB.\n````java\nEntityManager em = // inject entity manager\n\nProduct product = new Product()\nproduct.setName(\"Television\");\n\nCategory category = new Category();\ncategory.setName(\"Electronic\");\n\nproduct.setCategory(category)\ncategory.setProducts(Collections.single(product));\n\nreturn em.merge(product);\n````",
-    "createdAt": "2021-01-31",
+    "createdAt": "2021-02-02",
     "createdBy": "Loc Vo",
     "tags": ["Programming", "Java"]
   }
