@@ -20,5 +20,9 @@
         "@typescript-eslint"
     ],
     "rules": {
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "react/jsx-filename-extension": "off",
+        "no-use-before-define": "off"
     }
 }
